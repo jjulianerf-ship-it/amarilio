@@ -70,18 +70,21 @@
             }
         }
 
-        /* Estilos para ocultar el video de YouTube */
+        /* Estilos para el iframe de YouTube */
         #youtubeAudio {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
 
     <!-- Añade la música de fondo desde YouTube -->
-    <iframe id="youtubeAudio" width="0" height="0" src="https://www.youtube.com/embed/S7gMzYqXIZc?autoplay=1&loop=1&playlist=S7gMzYqXIZc" frameborder="0" allow="autoplay"></iframe>
+    <iframe id="youtubeAudio" src="https://www.youtube.com/embed/S7gMzYqXIZc?autoplay=1&loop=1&playlist=S7gMzYqXIZc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
     <h1>flor amarilla</h1>
     <canvas id="girasolCanvas" width="800" height="800"></canvas>
@@ -90,7 +93,6 @@
     <button id="reiniciarBtn">Volver a Dibujar</button>
 
     <script>
-        // El resto de tu código JavaScript sigue aquí
         window.onload = function() {
             const canvas = document.getElementById('girasolCanvas');
             const ctx = canvas.getContext('2d');
