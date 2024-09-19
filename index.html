@@ -72,16 +72,26 @@
 
         /* Estilos para el iframe de YouTube */
         #youtubeAudio {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            overflow: hidden;
+            width: 100%;
+            height: 56px; /* Alto de un reproductor de video típico */
+            background: #000;
+            border: none;
+            margin-top: 20px;
+        }
+
+        #reproducirMensaje {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ff0000;
         }
     </style>
 </head>
 <body>
+
+    <!-- Mensaje para el usuario si el audio no se reproduce automáticamente -->
+    <div id="reproducirMensaje">
+        Si el audio no comienza automáticamente, por favor presiona el botón de reproducción en el reproductor de YouTube abajo.
+    </div>
 
     <!-- Añade la música de fondo desde YouTube -->
     <iframe id="youtubeAudio" src="https://www.youtube.com/embed/S7gMzYqXIZc?autoplay=1&loop=1&playlist=S7gMzYqXIZc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
